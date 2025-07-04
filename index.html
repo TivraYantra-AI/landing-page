@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tivra-Yantra-AI | Fast. Sharp. Intelligent.</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #1a0b0b 0%,
+          #2d1810 30%,
+          #1f1a0f 70%,
+          #0f0a0a 100%
+        );
+        color: #f4e4c1;
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Enhanced Background Patterns with Dynamic Animations */
+
+      /* Updated Traditional Indian Patterns */
+      .bg-pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.15;
+        background-image: radial-gradient(
+            circle at 25% 25%,
+            #d4af37 2px,
+            transparent 2px
+          ),
+          radial-gradient(circle at 75% 75%, #cd853f 2px, transparent 2px),
+          radial-gradient(circle at 50% 50%, #b8860b 1px, transparent 1px);
+        background-size: 40px 40px, 60px 60px, 80px 80px;
+        animation: patternFlow 30s linear infinite,
+          patternPulse 8s ease-in-out infinite;
+      }
+
+      @keyframes patternFlow {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+          transform: translate(20px, -10px) rotate(90deg);
+        }
+        50% {
+          transform: translate(40px, 20px) rotate(180deg);
+        }
+        75% {
+          transform: translate(20px, 40px) rotate(270deg);
+        }
+        100% {
+          transform: translate(0, 0) rotate(360deg);
+        }
+      }
+
+      @keyframes patternPulse {
+        0%,
+        100% {
+          opacity: 0.15;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.25;
+          transform: scale(1.02);
+        }
+      }
+
+      /* Enhanced Mandala Pattern */
+      .mandala-bg {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 800px;
+        height: 800px;
+        transform: translate(-50%, -50%);
+        opacity: 0.1;
+        z-index: -1;
+        background: radial-gradient(
+          circle,
+          transparent 20%,
+          #d4af37 20.5%,
+          #d4af37 21%,
+          transparent 21.5%,
+          transparent 30%,
+          #cd853f 30.5%,
+          #cd853f 31%,
+          transparent 31.5%,
+          transparent 40%,
+          #b8860b 40.5%,
+          #b8860b 41%,
+          transparent 41.5%
+        );
+        animation: mandalaRotate 40s linear infinite,
+          mandalaBreath 12s ease-in-out infinite;
+      }
+
+      @keyframes mandalaRotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+      @keyframes mandalaBreath {
+        0%,
+        100% {
+          opacity: 0.1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          opacity: 0.18;
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+      }
+
+      /* Enhanced Lotus Pattern - Improved Coverage and Symmetry */
+      .lotus-pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        opacity: 0.09;
+        /* Tiled SVG with 8-petal lotus, more symmetric, covers all sides */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg opacity='0.8'%3E%3Cpath d='M130 40 C110 60, 110 100, 130 130 C150 100, 150 60, 130 40 Z' fill='%23d4af37'/%3E%3Cpath d='M130 130 C110 150, 110 190, 130 220 C150 190, 150 150, 130 130 Z' fill='%23cd853f'/%3E%3Cpath d='M40 130 C60 110, 100 110, 130 130 C100 150, 60 150, 40 130 Z' fill='%23b8860b'/%3E%3Cpath d='M130 130 C150 110, 190 110, 220 130 C190 150, 150 150, 130 130 Z' fill='%23daa520'/%3E%3Cpath d='M65 65 C90 90, 90 130, 130 130 C90 130, 90 90, 65 65 Z' fill='%23d4af37'/%3E%3Cpath d='M195 65 C170 90, 170 130, 130 130 C170 130, 170 90, 195 65 Z' fill='%23cd853f'/%3E%3Cpath d='M65 195 C90 170, 90 130, 130 130 C90 130, 90 170, 65 195 Z' fill='%23b8860b'/%3E%3Cpath d='M195 195 C170 170, 170 130, 130 130 C170 130, 170 170, 195 195 Z' fill='%23daa520'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 220px 220px;
+        background-position: center center;
+        background-repeat: repeat;
+        animation: lotusFloat 40s linear infinite,
+          lotusShimmer 15s linear infinite;
+        pointer-events: none;
+      }
+
+      /* @keyframes lotusFloat {
+        0% {
+          transform: scale(1) rotate(0deg) translate(0, 0);
+        }
+        20% {
+          transform: scale(1.04) rotate(45deg) translate(10px, -10px);
+        }
+        40% {
+          transform: scale(1.08) rotate(90deg) translate(-10px, 10px);
+        }
+        60% {
+          transform: scale(1.04) rotate(135deg) translate(10px, 10px);
+        }
+        80% {
+          transform: scale(1) rotate(315deg) translate(-10px, -10px);
+        }
+        100% {
+          transform: scale(1) rotate(360deg) translate(0, 0);
+        }
+      } */
+
+      @keyframes lotusShimmer {
+        0%,
+        100% {
+          opacity: 0.08;
+        }
+        25% {
+          opacity: 0.12;
+        }
+        50% {
+          opacity: 0.15;
+        }
+        75% {
+          opacity: 0.1;
+        }
+      }
+
+      /* Add a new Sacred Geometry Pattern */
+      .sacred-geometry {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        opacity: 0.05;
+        background-image: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 20px,
+            rgba(212, 175, 55, 0.1) 20px,
+            rgba(212, 175, 55, 0.1) 22px
+          ),
+          repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 20px,
+            rgba(205, 133, 63, 0.1) 20px,
+            rgba(205, 133, 63, 0.1) 22px
+          );
+        animation: geometryShift 50s linear infinite,
+          geometryPulse 20s ease-in-out infinite;
+      }
+
+      @keyframes geometryShift {
+        0% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(10px, -10px);
+        }
+        50% {
+          transform: translate(-5px, 15px);
+        }
+        75% {
+          transform: translate(-15px, -5px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      @keyframes geometryPulse {
+        0%,
+        100% {
+          opacity: 0.05;
+        }
+        50% {
+          opacity: 0.08;
+        }
+      }
+
+      /* Enhanced Ornament Animations */
+      .ornament {
+        display: inline-block;
+        font-size: 2rem;
+        color: #d4af37;
+        margin: 0 1rem;
+        animation: ornamentGlow 2s ease-in-out infinite alternate,
+          ornamentFloat 8s ease-in-out infinite;
+      }
+
+      @keyframes ornamentGlow {
+        0% {
+          text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+        100% {
+          text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+      }
+
+      @keyframes ornamentFloat {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        25% {
+          transform: translateY(-3px) rotate(5deg);
+        }
+        50% {
+          transform: translateY(2px) rotate(0deg);
+        }
+        75% {
+          transform: translateY(-1px) rotate(-5deg);
+        }
+      }
+
+      /* Add Dynamic Particle Effect */
+      .particle-layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.3;
+        background-image: radial-gradient(
+            circle at 10% 20%,
+            rgba(212, 175, 55, 0.1) 1px,
+            transparent 1px
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(205, 133, 63, 0.1) 1px,
+            transparent 1px
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(184, 134, 11, 0.1) 1px,
+            transparent 1px
+          ),
+          radial-gradient(
+            circle at 90% 10%,
+            rgba(218, 165, 32, 0.1) 1px,
+            transparent 1px
+          );
+        background-size: 150px 150px, 200px 200px, 100px 100px, 250px 250px;
+        animation: particleFlow 60s linear infinite,
+          particleTwinkle 10s ease-in-out infinite;
+      }
+
+      @keyframes particleFlow {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(50px, 100px);
+        }
+      }
+
+      @keyframes particleTwinkle {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 0.6;
+        }
+      }
+
+      /* Header */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(52, 28, 16, 0.95),
+          rgba(29, 24, 16, 0.95)
+        );
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        transition: all 0.3s ease;
+        border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        background: linear-gradient(45deg, #d4af37, #cd853f, #daa520);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: #f4e4c1;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        position: relative;
+        font-weight: 500;
+      }
+
+      .nav-links a:hover {
+        color: #d4af37;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #d4af37, #cd853f);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        padding-top: 80px;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .hero-title {
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 900;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #d4af37, #cd853f, #daa520, #b8860b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: templeGlow 3s ease-in-out infinite alternate;
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+      }
+
+      .sanskrit-meaning {
+        font-size: 1.2rem;
+        color: #cd853f;
+        margin-bottom: 2rem;
+        font-style: italic;
+        padding: 1rem 2rem;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.1),
+          rgba(205, 133, 63, 0.1)
+        );
+        border-radius: 15px;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        backdrop-filter: blur(5px);
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: #f4e4c1;
+        font-weight: 600;
+      }
+
+      .tagline {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #d4af37;
+        margin-bottom: 3rem;
+        animation: fadeIn 1s ease-out 0.5s both;
+        text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .btn:hover::before {
+        left: 100%;
+      }
+
+      .btn-primary {
+        background: linear-gradient(45deg, #d4af37, #cd853f);
+        color: #1a0b0b;
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: #d4af37;
+        border: 2px solid #d4af37;
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+      }
+
+      .btn-secondary:hover {
+        background: linear-gradient(45deg, #d4af37, #cd853f);
+        color: #1a0b0b;
+        transform: translateY(-2px);
+      }
+
+      /* About Section */
+      .about {
+        padding: 6rem 0;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.05),
+          rgba(205, 133, 63, 0.05)
+        );
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-text h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 2rem;
+        background: linear-gradient(45deg, #d4af37, #cd853f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+      }
+
+      .about-text p {
+        font-size: 1.2rem;
+        color: #f4e4c1;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+      }
+
+      .features {
+        list-style: none;
+        margin: 2rem 0;
+      }
+
+      .features li {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .features li:hover {
+        padding-left: 1rem;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.1),
+          transparent
+        );
+        border-radius: 10px;
+      }
+
+      .features li:last-child {
+        border-bottom: none;
+      }
+
+      .feature-icon {
+        font-size: 1.5rem;
+        color: #d4af37;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+      }
+
+      .code-display {
+        background: linear-gradient(
+          135deg,
+          rgba(26, 11, 11, 0.8),
+          rgba(45, 24, 16, 0.8)
+        );
+        border-radius: 20px;
+        padding: 2rem;
+        border: 2px solid rgba(212, 175, 55, 0.3);
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+      }
+
+      .code-display::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        animation: templeShine 3s linear infinite;
+      }
+
+      .code-display::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        border-radius: 15px;
+        pointer-events: none;
+      }
+
+      @keyframes templeShine {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      .code-header {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .code-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+      }
+
+      .code-dot.saffron {
+        background: #d4af37;
+      }
+      .code-dot.copper {
+        background: #cd853f;
+      }
+      .code-dot.bronze {
+        background: #b8860b;
+      }
+
+      .code-content {
+        font-family: "Courier New", monospace;
+        color: #d4af37;
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      .code-comment {
+        color: #cd853f;
+        font-style: italic;
+      }
+
+      .code-keyword {
+        color: #daa520;
+        font-weight: bold;
+      }
+
+      .code-string {
+        color: #f4e4c1;
+      }
+
+      /* Contributing Section */
+      .contributing {
+        padding: 6rem 0;
+        text-align: center;
+        background: linear-gradient(
+          135deg,
+          rgba(184, 134, 11, 0.05),
+          rgba(218, 165, 32, 0.05)
+        );
+      }
+
+      .contributing h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 2rem;
+        background: linear-gradient(45deg, #d4af37, #cd853f, #daa520);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+      }
+
+      .contributing p {
+        font-size: 1.3rem;
+        color: #f4e4c1;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+        line-height: 1.8;
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(
+          135deg,
+          rgba(26, 11, 11, 0.8),
+          rgba(45, 24, 16, 0.8)
+        );
+        padding: 3rem 0;
+        text-align: center;
+        border-top: 2px solid rgba(212, 175, 55, 0.3);
+        backdrop-filter: blur(10px);
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .footer-left {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .footer-tagline {
+        font-size: 1.2rem;
+        color: #d4af37;
+        font-weight: 600;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+      }
+
+      .footer-description {
+        color: #cd853f;
+        line-height: 1.6;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-links a {
+        color: #f4e4c1;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        padding: 0.5rem;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.1),
+          rgba(205, 133, 63, 0.1)
+        );
+        border: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      .social-links a:hover {
+        color: #d4af37;
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+      }
+
+      /* Decorative Elements */
+      /* .ornament enhanced above */
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes templeGlow {
+        0% {
+          text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+        100% {
+          text-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Traditional Patterns Background -->
+    <div class="bg-pattern"></div>
+    <div class="mandala-bg"></div>
+    <div class="lotus-pattern"></div>
+    <div class="sacred-geometry"></div>
+    <div class="particle-layer"></div>
+
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="logo">⚡️Tivra-Yantra-AI</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contribute">Contribute</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1 class="hero-title">⚡️Tivra-Yantra-AI</h1>
+        <div class="sanskrit-meaning">
+          <span class="ornament">"<>"</span>
+          "Tivra" (तीव्र) means <em>fast</em>, <em>sharp</em>, or
+          <em>intense</em><br />
+          "Yantra" (यंत्र) means <em>machine</em> or <em>instrument</em>
+          <span class="ornament">॥</span>
+        </div>
+        <p class="hero-subtitle">
+          Where the Love of Building Meets the Age of Intelligence
+        </p>
+        <p class="tagline">Fast. Sharp. Intelligent.</p>
+        <div class="cta-buttons">
+          <a href="#about" class="btn btn-primary"> 🚀 Explore Our Vision </a>
+          <a href="https://github.com/TivraYantra-AI" class="btn btn-secondary">
+            💻 View on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>About Us</h2>
+            <p>
+              Tivra-Yantra-AI is a cutting-edge initiative dedicated to
+              developing impactful and creative artificial intelligence and
+              machine learning projects. We build fast, powerful, and innovative
+              AI/ML systems that push the boundaries of machine intelligence.
+            </p>
+            <p>
+              Our goal is to create open-source tools, models, and applications
+              that make a real difference in the world, combining ancient wisdom
+              with modern technology.
+            </p>
+            <ul class="features">
+              <li>
+                <span class="feature-icon">⚙️</span>
+                <span>Technically Advanced Solutions</span>
+              </li>
+              <li>
+                <span class="feature-icon">🧠</span>
+                <span>Intelligently Designed Systems</span>
+              </li>
+              <li>
+                <span class="feature-icon">🌐</span>
+                <span>Real-World Applications</span>
+              </li>
+            </ul>
+          </div>
+          <div class="code-display">
+            <div class="code-header">
+              <div class="code-dot saffron"></div>
+              <div class="code-dot copper"></div>
+              <div class="code-dot bronze"></div>
+            </div>
+            <div class="code-content">
+              <div>
+                <span class="code-comment"
+                  ># Building the future of AI with ancient wisdom</span
+                >
+              </div>
+              <div><span class="code-keyword">class</span> TivraYantraAI:</div>
+              <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">def</span>
+                __init__(<span class="code-keyword">self</span>):
+              </div>
+              <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  class="code-keyword"
+                  >self</span
+                >.mission =
+                <span class="code-string">"fast_sharp_intelligent"</span>
+              </div>
+              <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  class="code-keyword"
+                  >self</span
+                >.values = [<span class="code-string">"open_source"</span>,
+                <span class="code-string">"innovation"</span>]
+              </div>
+              <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  class="code-keyword"
+                  >self</span
+                >.impact =
+                <span class="code-string">"real_world_solutions"</span>
+              </div>
+              <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  class="code-keyword"
+                  >self</span
+                >.philosophy =
+                <span class="code-string">"ancient_wisdom_modern_tech"</span>
+              </div>
+              <div><br /></div>
+              <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">def</span>
+                build_future(<span class="code-keyword">self</span>):
+              </div>
+              <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  class="code-keyword"
+                  >return</span
+                >
+                <span class="code-string">"AI for everyone"</span>
+                <span class="ornament">✨</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contributing Section -->
+    <section class="contributing" id="contribute">
+      <div class="container">
+        <h2>Contributing</h2>
+        <p>
+          Want to build with us? We welcome contributions! Join our community of
+          innovators and help us create the next generation of AI tools and
+          applications, blending traditional wisdom with cutting-edge
+          technology.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://github.com/TivraYantra-AI" class="btn btn-primary">
+            🤝 Start Contributing
+          </a>
+          <a
+            href="https://github.com/TivraYantra-AI/documentation"
+            class="btn btn-secondary"
+          >
+            📖 Read Documentation
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-left">
+            <div class="footer-tagline">
+              <span class="ornament">❤️</span>
+              Built with love for intelligent systems and the art of creation
+              <span class="ornament">"<>"</span>
+            </div>
+            <div class="footer-description">
+              We believe in the power of open-source collaboration to accelerate
+              AI innovation, guided by the timeless principles of knowledge
+              sharing.
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/TivraYantra-AI" title="GitHub">⚡</a>
+            <!-- <a href="#" title="Twitter">🐦</a>
+            <a href="#" title="LinkedIn">💼</a> -->
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Header scroll effect
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.style.background =
+            "linear-gradient(135deg, rgba(52, 28, 16, 0.98), rgba(29, 24, 16, 0.98))";
+          header.style.borderBottom = "2px solid rgba(212, 175, 55, 0.5)";
+        } else {
+          header.style.background =
+            "linear-gradient(135deg, rgba(52, 28, 16, 0.95), rgba(29, 24, 16, 0.95))";
+          header.style.borderBottom = "2px solid rgba(212, 175, 55, 0.3)";
+        }
+      });
+
+      // Add floating animation to elements
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".about-text, .code-display").forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+        observer.observe(el);
+      });
+
+      // Add interactive hover effects for ornaments
+      document.querySelectorAll(".ornament").forEach((ornament) => {
+        ornament.addEventListener("mouseenter", () => {
+          ornament.style.transform = "scale(1.2) rotate(10deg)";
+          ornament.style.textShadow = "0 0 20px rgba(212, 175, 55, 0.8)";
+        });
+
+        ornament.addEventListener("mouseleave", () => {
+          ornament.style.transform = "scale(1) rotate(0deg)";
+          ornament.style.textShadow = "0 0 10px rgba(212, 175, 55, 0.3)";
+        });
+      });
+    </script>
+  </body>
+</html>
